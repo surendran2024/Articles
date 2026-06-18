@@ -11,7 +11,7 @@
     --accent:#e0915a; --accent2:#6cb6d6; --gold:#cda45f;
     --card:#171b21; --card2:#1c2128;
     --shadow:0 1px 3px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.40);
-    --maxw:760px;
+    --maxw:820px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -69,7 +69,8 @@
     font-family:"Helvetica Neue",Arial,sans-serif; margin-top:12px; letter-spacing:.02em}
 
   /* FIGURE / CARD WRAPPERS */
-  .figure{margin:42px 0; background:var(--card); border:1px solid var(--line); border-radius:12px;
+  .figure{margin:42px 0; width:min(1140px,94vw); margin-left:50%; transform:translateX(-50%);
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
     box-shadow:var(--shadow); overflow:hidden}
   .figure .fhead{background:#0b0e12; color:#f4ecdc; padding:16px 24px; font-family:"Helvetica Neue",Arial,sans-serif;
     border-bottom:1px solid var(--line)}
