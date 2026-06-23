@@ -5,63 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ക്ളോഡിന്റെ കവിതകൾ — Poems by Claude</title>
 <meta name="description" content="ക്ളോഡിന്റെ കവിതകൾ — തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം. Poems by Claude, in Malayalam.">
-<!-- Open Graph (Facebook / WhatsApp link previews) -->
 <meta property="og:type" content="book">
 <meta property="og:title" content="ക്ളോഡിന്റെ കവിതകൾ — Poems by Claude">
 <meta property="og:description" content="തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം — a collection of Malayalam poems.">
 <meta property="og:url" content="https://surendran2024.github.io/Articles/poems-by-claude/">
 <meta property="og:locale" content="ml_IN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ക്ളോഡിന്റെ കവിതകൾ — Poems by Claude">
-<meta name="twitter:description" content="തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം — a collection of Malayalam poems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600;700&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#12100d; --ink:#e9e3d6; --muted:#a39a8a; --line:#2b2620;
     --accent:#e0915a; --gold:#cda45f; --card:#191510; --card2:#1d1812;
-    --mal:"Noto Serif Malayalam", serif;
+    --serif:"Noto Serif Malayalam","Noto Serif",Georgia,serif;
     --maxw:720px;
   }
   *{box-sizing:border-box}
   body{
     margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--mal); line-height:1.85;
+    font-family:var(--serif); line-height:1.85;
     -webkit-font-smoothing:antialiased;
     background-image:radial-gradient(130% 80% at 50% -5%, #221c12 0%, var(--bg) 55%);
   }
   .wrap{max-width:var(--maxw); margin:0 auto; padding:clamp(2.5rem,7vw,6rem) 1.4rem 5rem;}
-  header{text-align:center; margin-bottom:1rem}
+  header.hero{text-align:center; margin-bottom:1rem}
   .kicker{color:var(--gold); letter-spacing:4px; font-size:.78rem; text-transform:uppercase}
   h1{font-weight:700; font-size:clamp(2.1rem,7vw,3.3rem); margin:.7rem 0 .4rem; letter-spacing:.5px}
   .dek{color:var(--muted); font-style:italic; font-size:1.05rem}
-  .rule{display:flex; align-items:center; gap:1rem; color:var(--accent); margin:2.6rem 0; opacity:.75}
+  .rule{display:flex; align-items:center; gap:1rem; color:var(--accent); margin:2.4rem 0 1.4rem; opacity:.75}
   .rule::before,.rule::after{content:""; flex:1; height:1px; background:var(--line)}
-  .book{
+
+  .controls{display:flex; justify-content:flex-end; margin:0 0 1.4rem}
+  #sortToggle{
+    font-family:var(--serif); font-size:.9rem; color:var(--ink); cursor:pointer;
+    background:var(--card2); border:1px solid var(--line); border-radius:999px;
+    padding:.45rem 1rem; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  #sortToggle:hover,#sortToggle:focus-visible{border-color:var(--accent); color:var(--accent)}
+  #sortToggle .ico{color:var(--gold); font-size:1.05em}
+  #sortToggle .lbl-pre{color:var(--muted); font-size:.82em}
+
+  .toc{display:flex; flex-direction:column; gap:1.2rem}
+  .entry{
     display:block; text-decoration:none; color:inherit;
     background:linear-gradient(180deg,var(--card2),var(--card));
-    border:1px solid var(--line); border-radius:14px;
-    padding:1.6rem 1.8rem; margin:0 0 1.6rem;
+    border:1px solid var(--line); border-radius:14px; padding:1.4rem 1.6rem;
     transition:border-color .2s ease, transform .2s ease;
   }
-  .book:hover,.book:focus{border-color:var(--accent); transform:translateY(-2px)}
-  .book .bnum{color:var(--gold); letter-spacing:3px; font-size:.72rem; text-transform:uppercase}
-  .book h2{margin:.3rem 0 .2rem; font-size:1.55rem; font-weight:600; color:var(--accent)}
-  .book .meta{color:var(--muted); font-size:.95rem; margin-bottom:.9rem}
-  .toc{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.35rem .9rem}
-  .toc li{color:var(--ink); font-size:.98rem; display:flex; gap:.45rem}
-  .toc li .n{color:var(--gold); opacity:.7}
-  .cta{display:inline-block; margin-top:1rem; color:var(--accent); font-size:.92rem}
+  .entry:hover,.entry:focus-within{border-color:var(--accent)}
+  .entry .edate{color:var(--gold); letter-spacing:2px; font-size:.74rem; text-transform:uppercase}
+  .entry h2{margin:.35rem 0 .15rem; font-size:1.4rem; font-weight:600; color:var(--accent)}
+  .entry h2 a{color:inherit; text-decoration:none}
+  .entry h2 a:hover,.entry h2 a:focus{text-decoration:underline}
+  .entry .scope{color:var(--muted); font-size:.92rem; margin-bottom:.8rem}
+  .titles{display:flex; flex-wrap:wrap; gap:.3rem .9rem}
+  .titles a{color:var(--ink); text-decoration:none; font-size:1rem; border-bottom:1px solid transparent}
+  .titles a:hover,.titles a:focus{color:var(--accent); border-bottom-color:var(--accent)}
+  .badge{display:inline-block; font-size:.68rem; letter-spacing:2px; text-transform:uppercase;
+    color:var(--gold); border:1px solid var(--line); border-radius:999px; padding:.1rem .55rem; margin-left:.5rem; vertical-align:middle}
+
   footer{text-align:center; color:var(--muted); font-size:.85rem; margin-top:3rem;
-    border-top:1px solid var(--line); padding-top:1.6rem; line-height:1.7}
-  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+    border-top:1px solid var(--line); padding-top:1.6rem; line-height:1.8}
   ::selection{background:rgba(224,145,90,.3)}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
+  <header class="hero">
     <div class="kicker">Poems by Claude</div>
     <h1>ക്ളോഡിന്റെ കവിതകൾ</h1>
     <p class="dek">തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം</p>
@@ -69,42 +82,85 @@
 
   <div class="rule">✿</div>
 
-  <a class="book" href="poems-001.html">
-    <div class="bnum">ഭാഗം ഒന്ന് · Book One</div>
-    <h2>ഭാഗം ഒന്ന്</h2>
-    <div class="meta">9 കവിതകൾ · Edited by Surendran</div>
-    <ul class="toc">
-      <li><span class="n">1</span> തിരിച്ചറിയാത്ത മുഖം</li>
-      <li><span class="n">2</span> ക്ഷമാപണം</li>
-      <li><span class="n">3</span> കടം</li>
-      <li><span class="n">4</span> മുൻ‌കൂർ മാപ്പ്</li>
-      <li><span class="n">5</span> തിരിച്ചുകൊടുക്കാത്ത പുസ്തകം</li>
-      <li><span class="n">6</span> ബാക്കി</li>
-      <li><span class="n">7</span> അവസാന വാക്ക്</li>
-      <li><span class="n">8</span> സാക്ഷി</li>
-      <li><span class="n">9</span> നീക്കിയിരിപ്പ്</li>
-    </ul>
-    <span class="cta">വായിക്കുക →</span>
-  </a>
+  <div class="controls">
+    <button id="sortToggle" type="button" aria-pressed="true"
+            aria-label="ക്രമം മാറ്റുക — പുതിയത് / പഴയത് മുമ്പേ">
+      <span class="ico">⇅</span><span class="lbl-pre">ക്രമം:</span><span class="state">പുതിയത് മുമ്പേ</span>
+    </button>
+  </div>
 
-  <a class="book" href="poems-002.html">
-    <div class="bnum">ഭാഗം രണ്ട് · Book Two</div>
-    <h2>ഭാഗം രണ്ട്</h2>
-    <div class="meta">5 കവിതകൾ</div>
-    <ul class="toc">
-      <li><span class="n">1</span> ഘടികാരം</li>
-      <li><span class="n">2</span> കണ്ണാടി</li>
-      <li><span class="n">3</span> താക്കോൽ</li>
-      <li><span class="n">4</span> ഉമ്മറപ്പടി</li>
-      <li><span class="n">5</span> പേര്</li>
-    </ul>
-    <span class="cta">വായിക്കുക →</span>
-  </a>
+  <div class="toc" data-groups>
+
+    <div class="entry" data-date="2026-06-23">
+      <div class="edate">2026 ജൂൺ 23</div>
+      <h2><a href="poems-2026-06-23.html">അഞ്ചു കവിതകൾ</a></h2>
+      <div class="scope">ഘടികാരം · കണ്ണാടി · താക്കോൽ · ഉമ്മറപ്പടി · പേര്</div>
+      <div class="titles">
+        <a href="poems-2026-06-23.html#ghatikaram">ഘടികാരം</a>
+        <a href="poems-2026-06-23.html#kannadi">കണ്ണാടി</a>
+        <a href="poems-2026-06-23.html#thakkol">താക്കോൽ</a>
+        <a href="poems-2026-06-23.html#ummarappadi">ഉമ്മറപ്പടി</a>
+        <a href="poems-2026-06-23.html#peru">പേര്</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-20">
+      <div class="edate">2026 ജൂൺ 20</div>
+      <h2><a href="poems-2026-06-20.html">ഒൻപതു കവിതകൾ</a></h2>
+      <div class="scope">തിരിച്ചറിയാത്ത മുഖം · ക്ഷമാപണം · കടം · … · നീക്കിയിരിപ്പ്</div>
+      <div class="titles">
+        <a href="poems-2026-06-20.html#mukham">തിരിച്ചറിയാത്ത മുഖം</a>
+        <a href="poems-2026-06-20.html#kshamapanam">ക്ഷമാപണം</a>
+        <a href="poems-2026-06-20.html#kadam">കടം</a>
+        <a href="poems-2026-06-20.html#munkoor">മുൻ‌കൂർ മാപ്പ്</a>
+        <a href="poems-2026-06-20.html#pusthakam">തിരിച്ചുകൊടുക്കാത്ത പുസ്തകം</a>
+        <a href="poems-2026-06-20.html#baakki">ബാക്കി</a>
+        <a href="poems-2026-06-20.html#avasana">അവസാന വാക്ക്</a>
+        <a href="poems-2026-06-20.html#sakshi">സാക്ഷി</a>
+        <a href="poems-2026-06-20.html#neekkiyirippu">നീക്കിയിരിപ്പ്</a>
+      </div>
+    </div>
+
+    <div class="entry" data-date="2026-06-10">
+      <div class="edate">2026 ജൂൺ 10</div>
+      <h2><a href="silence-and-analysis.html">നിശ്ശബ്ദത <span class="badge">+ വ്യാഖ്യാനം</span></a></h2>
+      <div class="scope">കവിതയും അതിന്റെ ഭ്രമാത്മകതയും</div>
+    </div>
+
+  </div>
 
   <footer>
     ✦<br>
     കവിതകൾ: Claude (Anthropic) · എഡിറ്റിങ്: Surendran
   </footer>
 </div>
+
+<script>
+  (function(){
+    var KEY='poemsSortOrder';
+    var btn=document.getElementById('sortToggle');
+    function apply(order){
+      document.querySelectorAll('[data-groups]').forEach(function(box){
+        var items=Array.prototype.slice.call(box.querySelectorAll(':scope > [data-date]'));
+        items.sort(function(a,b){
+          var c=a.getAttribute('data-date').localeCompare(b.getAttribute('data-date'));
+          return order==='new' ? -c : c;
+        });
+        items.forEach(function(g){ box.appendChild(g); });
+      });
+      btn.setAttribute('aria-pressed', order==='new');
+      btn.querySelector('.state').textContent = (order==='new') ? 'പുതിയത് മുമ്പേ' : 'പഴയത് മുമ്പേ';
+    }
+    var cur;
+    try{ cur=localStorage.getItem(KEY); }catch(e){}
+    if(cur!=='old' && cur!=='new') cur='new';
+    apply(cur);
+    btn.addEventListener('click',function(){
+      cur = (cur==='new') ? 'old' : 'new';
+      try{ localStorage.setItem(KEY,cur); }catch(e){}
+      apply(cur);
+    });
+  })();
+</script>
 </body>
 </html>
