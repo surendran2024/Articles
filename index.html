@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surendran — Essays &amp; Collections</title>
+<meta name="description" content="Long-form essays on philosophy of mind, artificial intelligence, linguistics and biology, plus a Malayalam poetry collection — by Surendran, some written with Claude (Anthropic). Readable by anyone, sourced for those who want to dig deeper.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Surendran — Essays &amp; Collections">
+<meta property="og:description" content="Long-form, sourced essays on mind, AI, language and biology — plus a Malayalam poetry collection.">
+<meta property="og:url" content="https://surendran2024.github.io/Articles/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1216; --ink:#e9e3d6; --muted:#a39a8a; --line:#2b3038;
+    --accent:#e0915a; --accent2:#6cb6d6; --gold:#cda45f;
+    --card:#171b21; --card2:#1c2128;
+    --shadow:0 1px 3px rgba(0,0,0,.45),0 14px 34px rgba(0,0,0,.40);
+    --maxw:760px;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:"Helvetica Neue",Arial,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(120% 80% at 50% -8%, #221a12 0%, var(--bg) 52%);
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:clamp(2.6rem,7vw,5.5rem) 1.4rem 4.5rem}
+  .ml{font-family:"Noto Serif Malayalam",var(--serif)}
+
+  header.hero{text-align:center; margin-bottom:.6rem}
+  .kicker{font-family:var(--sans); color:var(--gold); letter-spacing:.22em;
+    font-size:.74rem; text-transform:uppercase; font-weight:700}
+  h1{font-weight:700; font-size:clamp(2.1rem,6vw,3.1rem); margin:.7rem 0 .5rem;
+    letter-spacing:-.015em; color:#fbf5e9}
+  .dek{color:var(--muted); font-style:italic; font-size:1.06rem; max-width:34rem; margin:0 auto}
+
+  .rule{display:flex; align-items:center; gap:1rem; color:var(--accent); margin:2.2rem 0 1.3rem; opacity:.7}
+  .rule::before,.rule::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  .controls{display:flex; justify-content:flex-end; margin:0 0 1.3rem}
+  #sortToggle{
+    font-family:var(--sans); font-size:.86rem; color:var(--ink); cursor:pointer;
+    background:var(--card2); border:1px solid var(--line); border-radius:999px;
+    padding:.42rem 1rem; display:inline-flex; align-items:center; gap:.5rem;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  #sortToggle:hover,#sortToggle:focus-visible{border-color:var(--accent); color:var(--accent)}
+  #sortToggle .ico{color:var(--gold); font-size:1.05em}
+  #sortToggle .lbl-pre{color:var(--muted); font-size:.84em}
+
+  .toc{display:flex; flex-direction:column; gap:1.15rem}
+  .entry{
+    display:block; text-decoration:none; color:inherit;
+    background:linear-gradient(180deg,var(--card2),var(--card));
+    border:1px solid var(--line); border-radius:14px; padding:1.35rem 1.6rem;
+    box-shadow:var(--shadow);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .entry:hover,.entry:focus-within{border-color:var(--accent); transform:translateY(-1px)}
+  .meta{display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem .9rem; margin-bottom:.5rem}
+  .edate{font-family:var(--sans); color:var(--gold); letter-spacing:.14em; font-size:.72rem; text-transform:uppercase}
+  .disc{font-family:var(--sans); color:var(--muted); letter-spacing:.1em; font-size:.7rem; text-transform:uppercase}
+  .entry h2{margin:.1rem 0 .35rem; font-size:1.42rem; font-weight:700; line-height:1.25; letter-spacing:-.01em}
+  .entry h2 a{color:var(--accent); text-decoration:none}
+  .entry h2 a:hover,.entry h2 a:focus{text-decoration:underline}
+  .entry .blurb{color:#c9c1b1; font-size:1rem; line-height:1.6; margin:0}
+  .badge{display:inline-block; font-family:var(--sans); font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--gold); border:1px solid var(--line); border-radius:999px; padding:.12rem .55rem; vertical-align:middle}
+
+  footer{text-align:center; color:var(--muted); font-family:var(--sans); font-size:.82rem; margin-top:3rem;
+    border-top:1px solid var(--line); padding-top:1.6rem; line-height:1.8}
+  footer a{color:var(--accent2); text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  ::selection{background:rgba(224,145,90,.3)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .entry{transition:none}
+    .entry:hover,.entry:focus-within{transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Surendran &middot; surendran2024.github.io</div>
+    <h1>Essays &amp; Collections</h1>
+    <p class="dek">Long-form essays on mind, machines, language and life &mdash; written to be read by anyone, sourced for those who want to dig deeper. Some written solo, some with Claude.</p>
+  </header>
+
+  <div class="rule">&#10086;</div>
+
+  <div class="controls">
+    <button id="sortToggle" type="button" aria-pressed="true" aria-label="Change order — newest or oldest first">
+      <span class="ico">&#8645;</span><span class="lbl-pre">Order:</span><span class="state">Newest first</span>
+    </button>
+  </div>
+
+  <div class="toc" data-groups>
+
+    <div class="entry" data-date="2026-06-29">
+      <div class="meta">
+        <span class="edate">29 June 2026</span>
+        <span class="disc">Philosophy of Mind &middot; Artificial Intelligence &middot; Evolutionary Biology</span>
+      </div>
+      <h2><a href="pessoa-and-the-machine/">Pessoa and the Machine</a></h2>
+      <p class="blurb">Seventy years after Turing's imitation game, a single fragment from Fernando Pessoa's <em>Book of Disquiet</em> pulls intelligence apart from consciousness &mdash; and then turns the question back on us. With Turing, Searle, Nagel, Chalmers, stochastic parrots, Lane's bioenergetics and Hossenfelder's pragmatism.</p>
+    </div>
+
+    <div class="entry" data-date="2026-06-26">
+      <div class="meta">
+        <span class="edate">26 June 2026</span>
+        <span class="disc">Poetry &middot; Malayalam</span>
+        <span class="badge">Collection</span>
+      </div>
+      <h2><a href="poems-by-claude/"><span class="ml">ക്ളോഡിന്റെ കവിതകൾ</span> &mdash; Poems by Claude</a></h2>
+      <p class="blurb">A growing collection of Malayalam poems by Claude, edited by Surendran &mdash; <span class="ml">തീർക്കാത്ത കണക്കുകളുടെ ഒരു സമാഹാരം</span>. Opens its own dated index.</p>
+    </div>
+
+    <div class="entry" data-date="2026-06-22">
+      <div class="meta">
+        <span class="edate">22 June 2026</span>
+        <span class="disc">Philosophy &middot; Phenomenology &middot; Ethics</span>
+      </div>
+      <h2><a href="philosophical-other/">The Other and Its Discontents</a></h2>
+      <p class="blurb">A note on the philosophy of the Other and 'othering' &mdash; from Hegel and Husserl through Sartre, Camus, Levinas and de Beauvoir to Said and Spivak &mdash; read behind a single Malayalam couplet.</p>
+    </div>
+
+    <div class="entry" data-date="2026-06-19">
+      <div class="meta">
+        <span class="edate">19 June 2026</span>
+        <span class="disc">Linguistics &middot; Cognitive Science &middot; Artificial Intelligence</span>
+      </div>
+      <h2><a href="chomsky_ai/">Do ChatGPT and Claude Bury Chomsky?</a></h2>
+      <p class="blurb">Today's language models learn grammar from raw text with no Universal Grammar built in. So is Chomsky's great theory finished &mdash; or has the argument quietly moved to a stranger battlefield: languages no human could ever learn?</p>
+    </div>
+
+  </div>
+
+  <footer>
+    &#10022;<br>
+    Written by Surendran, several pieces in collaboration with Claude (Anthropic).<br>
+    Built as self-contained pages on <a href="https://github.com/surendran2024/Articles">GitHub Pages</a>.
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var KEY='articlesSortOrder';
+    var btn=document.getElementById('sortToggle');
+    function apply(order){
+      document.querySelectorAll('[data-groups]').forEach(function(box){
+        var items=Array.prototype.slice.call(box.querySelectorAll(':scope > [data-date]'));
+        items.sort(function(a,b){
+          var c=a.getAttribute('data-date').localeCompare(b.getAttribute('data-date'));
+          return order==='new' ? -c : c;
+        });
+        items.forEach(function(g){ box.appendChild(g); });
+      });
+      btn.setAttribute('aria-pressed', order==='new');
+      btn.querySelector('.state').textContent = (order==='new') ? 'Newest first' : 'Oldest first';
+    }
+    var cur;
+    try{ cur=localStorage.getItem(KEY); }catch(e){}
+    if(cur!=='old' && cur!=='new') cur='new';
+    apply(cur);
+    btn.addEventListener('click',function(){
+      cur = (cur==='new') ? 'old' : 'new';
+      try{ localStorage.setItem(KEY,cur); }catch(e){}
+      apply(cur);
+    });
+  })();
+</script>
+<script data-goatcounter="https://surendran2024.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
